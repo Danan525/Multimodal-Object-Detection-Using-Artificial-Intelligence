@@ -1,0 +1,39 @@
+# Hyperparameters for YOLOv10-L training
+
+lr0: 0.01  # 初始学习率（YOLOv10 使用的默认值和 YOLOv5 类似）
+lrf: 0.1  # 最终学习率系数（稍微降低）
+momentum: 0.95  # SGD 动量（YOLOv10 一般设高一些）
+weight_decay: 0.0005  # L2 正则化权重衰减
+
+warmup_epochs: 3.0  # 预热 epoch 数
+warmup_momentum: 0.8  # 预热阶段的动量
+warmup_bias_lr: 0.1  # 预热阶段的 bias 学习率
+
+# Loss 超参数（适配 YOLOv10-L）
+box: 7.5  # Box 回归损失增益（YOLOv10 推荐更高的值）
+cls: 0.5  # 分类损失权重
+cls_pw: 1.0  # 分类 BCE Loss 正权重
+obj: 1.0  # 目标损失权重
+obj_pw: 1.0  # 目标 BCE Loss 正权重
+iou_t: 0.20  # IoU 阈值
+anchor_t: 4.0  # anchor 选择阈值
+
+# Focal Loss γ（gamma），适用于 `cls` 和 `obj`
+fl_gamma: 2.0  # Focal Loss gamma，增强小目标检测能力
+
+# 数据增强参数（适配 YOLOv10）
+hsv_h: 0.015  # HSV 色调调整
+hsv_s: 0.7  # HSV 饱和度调整
+hsv_v: 0.4  # HSV 亮度调整
+degrees: 0.0  # 旋转角度
+translate: 0.1  # 平移变换
+scale: 0.5  # 缩放变换
+shear: 0.0  # 剪切变换
+perspective: 0.0  # 透视变换
+flipud: 0.0  # 上下翻转（通常不需要）
+fliplr: 0.5  # 左右翻转（默认0.5）
+
+# 进阶数据增强（YOLOv10 推荐值）
+mosaic: 1.0  # Mosaic 训练
+mixup: 0.15  # MixUp 训练（适用于增强鲁棒性）
+copy_paste: 0.1  # Copy-Paste 数据增强（适用于小目标）

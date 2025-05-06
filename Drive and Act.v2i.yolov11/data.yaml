@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 2
+names: ['laptop', 'pen']
+
+roboflow:
+  workspace: luke-fyp
+  project: drive-and-act
+  version: 2
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/luke-fyp/drive-and-act/dataset/2
